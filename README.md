@@ -12,7 +12,7 @@ These commands are available.
 
 You can create a new fiber project using like that;
 
-**Alias:**: `c`
+**Alias:** `c`
 
 `create-fiber-app create -n github.com/usernane/myproject`
 
