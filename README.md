@@ -26,7 +26,7 @@ It's a flag for the project name. It's required
 
 **Alias:** `-n`
 
-**Required**: `true`
+**Required**: true
 
 **Example:** `create-fiber-app create -n github.com/usernane/myproject`
 
@@ -36,7 +36,7 @@ It's a flag to specify the project directory. It will use the current directory 
 
 **Alias:** `-d`
 
-**Required**: `false`
+**Required**: false
 
 **Example:** `create-fiber-app create -n github.com/usernane/myproject -d /path/to/myproject`
 
@@ -45,4 +45,5 @@ It's a flag to specify the project directory. It will use the current directory 
 - [ ] Creating project templates to create example project files, custom middleware, .etc
 - [ ] Adding middleware to the current project (Fiber's itself and custom middleware)
 - [ ] Ability to create Fiber project by some project structures
+- [ ] Ability to add route
 - [ ] Add run command like `create-fiber-app run`
