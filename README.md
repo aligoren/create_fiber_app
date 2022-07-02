@@ -24,7 +24,7 @@ These are subcommands to customize your setup
 
 It's a flag for the project name. It's required
 
-**Alias:** "-n"
+**Alias:** `-n`
 
 **Required**: `true`
 
@@ -34,7 +34,7 @@ It's a flag for the project name. It's required
 
 It's a flag to specify the project directory. It will use the current directory if you don't specify a directory.
 
-**Alias:** "-d"
+**Alias:** `-d`
 
 **Required**: `false`
 
