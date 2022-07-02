@@ -8,7 +8,7 @@ Create Fiber App easily
 
 These commands are available.
 
-### `create`
+### create
 
 You can create a new fiber project using like that;
 
