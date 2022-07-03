@@ -17,7 +17,7 @@ func main() {
 		Description: "Creates Fiber apps with no build configuration",
 		Version:     "1.0",
 		Commands: []*cli.Command{
-			&commands.CreateCommand,
+			&commands.NewProjectCommand,
 		},
 	}
 
