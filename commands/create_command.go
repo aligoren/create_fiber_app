@@ -2,12 +2,32 @@ package commands
 
 import (
 	"create_fiber_app/internal"
+	"create_fiber_app/templates"
 	"errors"
 	"fmt"
-	"github.com/urfave/cli/v2"
 	"os"
 	"path/filepath"
+
+	"github.com/urfave/cli/v2"
 )
+
+// create example files with in a structure
+func createExampleFiles(dirName string) error {
+	filesToGenerate := []internal.ExampleFileGenerator{
+		{
+			Name:    fmt.Sprintf("%s%s", dirName, internal.ENTY_FILE),
+			Content: templates.MAIN_TEMPLATE,
+		},
+	}
+
+	err := internal.GenerateFiles(filesToGenerate)
+
+	if err != nil {
+		return fmt.Errorf("error: %w", err)
+	}
+
+	return nil
+}
 
 // prepare shell commands and run them sequentially
 func createApp(name string, dirName string) error {
@@ -43,6 +63,12 @@ func createApp(name string, dirName string) error {
 		fmt.Printf("%s\n", command.AfterMessage)
 	}
 
+	err = createExampleFiles(dirName)
+
+	if err != nil {
+		return fmt.Errorf("error: %w", err)
+	}
+
 	return nil
 }
 
@@ -69,7 +95,7 @@ func action(context *cli.Context) error {
 	fmt.Printf("%s\n", goModFilePath)
 
 	if _, err := os.Stat(goModFilePath); err == nil {
-		return errors.New(fmt.Sprintf("error: %s is already contains a go.mod file", dirName))
+		return fmt.Errorf("error: %s is already contains a go.mod file", dirName)
 	}
 
 	err := createApp(name, dirName)
